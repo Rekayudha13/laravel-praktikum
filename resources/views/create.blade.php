@@ -5,23 +5,29 @@
 
 <div class="card">
   <div class="card-header">
-    Daftar Blog <a class="btn btn-primary btn-sm float-end" href="{{ url('blogs/create') }}">Tambah</a>
+    Daftar Blog <a class="btn btn-primary btn-sm float-end" href="{{ url('blogs') }}">Kembali</a>
   </div>
   <div class="card-body">
-    <form action="" method="POST">
+    <form action="{{ url('blogs/save') }}" method="POST">
       @csrf
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        <label for="author" class="form-label">Author</label>
+        <input type="text" name="author" class="form-control" id="author">
       </div>
+
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="title" class="form-control" id="title">
       </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+      <div class="mb-3">
+        <label for="body" class="form-label">Body</label>
+        <textarea name="body" class="form-control" id="body"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="keyword" class="form-label">Keyword</label>
+        <input type="text" name="keyword" class="form-control" id="keyword">
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
