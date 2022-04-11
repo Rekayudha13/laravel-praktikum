@@ -18,8 +18,14 @@ class BlogController extends Controller
         return view('blogs', compact('data'));
     }
 
-    public function create(Request $request)
+    public function create()
     {
         return view('create');
+    }
+
+    public function save(Request $request)
+    {
+        Blog::create($request->all());
+        return redirect('blogs');
     }
 }
