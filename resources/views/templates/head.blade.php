@@ -13,7 +13,9 @@
   <body>
     @include('templates.navbar')
   
-    @yield('container')
+    <div class="container mt-4">
+      @yield('container')
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
